@@ -1,0 +1,16 @@
+The solution to the problem demonstrates the use of explicit parent dimensions to ensure that `calc()` has reliable values to work with:
+
+```css
+/* bugSolution.css */
+.parent {
+  width: 500px; /* Explicit width */
+  height: 300px; /* Explicit height */
+}
+
+.element {
+  width: calc(100% - 20px);
+  height: calc(50% - 10px);
+}
+```
+
+By giving the parent container (`parent`) fixed dimensions, we guarantee that the `calc()` function within the child element (`element`) will receive accurate input values, thus preventing unexpected behavior.
