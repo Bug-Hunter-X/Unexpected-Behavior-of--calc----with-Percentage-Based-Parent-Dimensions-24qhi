@@ -1,0 +1,10 @@
+The following CSS code snippet demonstrates an uncommon error related to the `calc()` function and its interaction with units:
+
+```css
+.element {
+  width: calc(100% - 20px);
+  height: calc(50% - 10px);
+}
+```
+
+This code *appears* correct, but it might produce unexpected results under certain conditions, especially when the parent element doesn't have a fixed width or height.  The problem arises from the fact that `calc()` evaluates the expression at the time of rendering, and if the parent dimensions aren't determined yet (e.g., due to layout dependencies or percentage-based sizing), the calculation may be performed with incorrect or zero values.
